@@ -1,0 +1,22 @@
+FROM python:{{ version }}-slim
+
+WORKDIR /app
+
+# Define variáveis de ambiente para otimizações do Python
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# Copia e instala as dependências
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copia o código-fonte do projeto
+COPY . .
+
+# Expõe a porta
+EXPOSE 8000
+
+# Comando para rodar a aplicação com Gunicorn.
+# Substitua 'project' pelo nome da sua pasta de projeto Django.
+# Ex: se o seu projeto se chama 'mysite', mude para 'mysite.wsgi'
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "project.wsgi"]
