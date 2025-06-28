@@ -1,6 +1,6 @@
 # Dockerfile Generator
 
-Uma ferramenta de linha de comando interativa para gerar Dockerfiles otimizados para projetos web.
+Uma ferramenta de linha de comando interativa para gerar Dockerfiles.
 
 ## Visão Geral
 
@@ -22,7 +22,7 @@ Para usar esta ferramenta, é necessário ter o **Docker** instalado na sua máq
 
 ## Como Usar
 
-O processo é automatizado por um script de shell.
+O processo é automatizado por um shell script.
 
 1.  **Clone o Repositório:**
 
